@@ -1,0 +1,25 @@
+# Terraform
+   **/.terraform/*
+   *.tfstate
+   *.tfstate.*
+   crash.log
+   crash.*.log
+   override.tf
+   override.tf.json
+   *_override.tf
+   *_override.tf.json
+   .terraformrc
+   terraform.rc
+
+   # Variable files that may contain secrets
+   *.tfvars
+   !example.tfvars
+
+   # SSH keys
+   *.pem
+   *.ppk
+   id_rsa*
+
+   # OS/editor junk
+   .DS_Store
+   .vscode/
