@@ -1,36 +1,36 @@
 name: Terraform Security Scan
 
 on:
-     push:
-       branches:
-         - staging
-     pull_request:
-       branches:
-         - prod
+  push:
+    branches:
+      - staging
+  pull_request:
+    branches:
+      - prod
 
-   jobs:
-     security-scan:
-       runs-on: ubuntu-latest
-       steps:
-         - name: Checkout code
-           uses: actions/checkout@v4
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-         - name: Run tflint
-           uses: terraform-linters/setup-tflint@v4
-           with:
-             tflint_version: latest
+      - name: Run tflint
+        uses: terraform-linters/setup-tflint@v4
+        with:
+          tflint_version: latest
 
-         - name: Init tflint
-           run: tflint --init
+      - name: Init tflint
+        run: tflint --init
 
-         - name: Run tflint checks
-           run: tflint --recursive
+      - name: Run tflint checks
+        run: tflint --recursive
 
-         - name: Run Trivy config scan
-           uses: aquasecurity/trivy-action@master
-           with:
-             scan-type: 'config'
-             scan-ref: '.'
-             format: 'table'
-             exit-code: '1'
-             severity: 'CRITICAL,HIGH'
+      - name: Run Trivy config scan
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: "config"
+          scan-ref: "."
+          format: "table"
+          exit-code: "1"
+          severity: "CRITICAL,HIGH"
