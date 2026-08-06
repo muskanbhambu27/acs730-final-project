@@ -1,6 +1,6 @@
 name: Terraform Security Scan
 
-   on:
+on:
      push:
        branches:
          - staging
