@@ -1,0 +1,12 @@
+environment          = "prod"
+vpc_cidr             = "10.2.0.0/16"
+public_subnet_cidrs  = ["10.2.1.0/24", "10.2.2.0/24"]
+private_subnet_cidrs = ["10.2.11.0/24", "10.2.12.0/24"]
+azs                  = ["us-east-1a", "us-east-1b"]
+instance_type        = "t3.medium"
+min_size             = 2
+max_size             = 4
+desired_capacity     = 2
+bucket_name          = "muskan-acs730-prod-images"
+image_key            = "website-image.jpg"
+name_prefix          = "Muskan"

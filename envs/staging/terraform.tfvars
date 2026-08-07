@@ -1,0 +1,12 @@
+environment          = "staging"
+vpc_cidr             = "10.1.0.0/16"
+public_subnet_cidrs  = ["10.1.1.0/24", "10.1.2.0/24"]
+private_subnet_cidrs = ["10.1.11.0/24", "10.1.12.0/24"]
+azs                  = ["us-east-1a", "us-east-1b"]
+instance_type        = "t3.small"
+min_size             = 1
+max_size             = 3
+desired_capacity     = 2
+bucket_name          = "muskan-acs730-staging-images"
+image_key            = "website-image.jpg"
+name_prefix          = "Muskan"
